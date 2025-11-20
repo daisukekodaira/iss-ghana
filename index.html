@@ -31,6 +31,7 @@
     img {
       max-width: 100%;
       height: auto;
+      display: block;
     }
 
     /* ---- Layout ---- */
@@ -42,11 +43,32 @@
 
     /* ---- Hero ---- */
     .hero {
-      background: linear-gradient(135deg, #005bac, #009688);
+      position: relative;
       color: #fff;
-      padding: 3rem 1.5rem 3.5rem;
+      padding: 3.2rem 1.5rem 3.6rem;
+      overflow: hidden;
+      background: #0f172a;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("images/hero-ghana.jpg") center/cover no-repeat;
+      opacity: 0.72;
+      filter: brightness(0.9);
+      z-index: 0;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(16,185,129,0.75));
+      mix-blend-mode: multiply;
+      z-index: 1;
     }
     .hero-inner {
+      position: relative;
+      z-index: 2;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -57,19 +79,24 @@
       border: 1px solid rgba(255,255,255,0.7);
       font-size: 0.8rem;
       letter-spacing: 0.08em;
+      background: rgba(15,23,42,0.4);
+      backdrop-filter: blur(4px);
     }
     .hero h1 {
       margin: 1.2rem 0 0.8rem;
       font-size: clamp(1.9rem, 4vw, 2.4rem);
       line-height: 1.3;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.45);
     }
     .hero-lead {
       font-size: 1rem;
       max-width: 40em;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
     .hero-highlight {
       margin-top: 0.6rem;
       font-weight: 600;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
     .hero-cta {
       margin-top: 1.6rem;
@@ -85,7 +112,7 @@
       background: #ffe066;
       color: #333;
       font-weight: 600;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
       border: none;
     }
     .btn-primary:hover {
@@ -94,7 +121,8 @@
     }
     .hero-note {
       font-size: 0.85rem;
-      opacity: 0.9;
+      opacity: 0.95;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     }
 
     /* ---- Section ---- */
@@ -130,6 +158,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 1.5rem;
+      align-items: flex-start;
     }
     .card {
       background: #fff;
@@ -160,6 +189,37 @@
       font-size: 0.8rem;
     }
 
+    /* ---- Image strip ---- */
+    .image-strip {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+    .image-strip figure {
+      margin: 0;
+      border-radius: 0.6rem;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+    .image-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+    }
+    .image-caption {
+      position: absolute;
+      left: 0.6rem;
+      bottom: 0.5rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+    }
+
     /* ---- Table-like list ---- */
     .course-list {
       border-collapse: collapse;
@@ -178,11 +238,24 @@
       font-weight: 600;
     }
 
+    /* ---- Partners images ---- */
+    .partner-layout {
+      display: grid;
+      grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
+      gap: 1.2rem;
+      align-items: start;
+    }
+    .partner-photo {
+      border-radius: 0.6rem;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      margin-top: 0.4rem;
+    }
+
     /* ---- Footer ---- */
     footer {
       padding: 1.5rem 1.5rem 2.5rem;
       font-size: 0.85rem;
-      color: #555;
       background: #111827;
       color: #e5e7eb;
     }
@@ -195,7 +268,14 @@
         grid-template-columns: 1fr;
       }
       .hero {
-        padding: 2.2rem 1.2rem 2.8rem;
+        padding: 2.4rem 1.2rem 2.8rem;
+      }
+      .image-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+      .image-strip figure:nth-child(1) {
+        grid-column: 1 / -1;
+        height: 220px;
       }
     }
   </style>
@@ -266,6 +346,22 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- 画像ストリップ -->
+      <div class="image-strip" aria-label="ガーナのイメージ写真">
+        <figure>
+          <img src="images/ghana-city.jpg" alt="ガーナの街並み">
+          <div class="image-caption">アクラの街並み（イメージ）</div>
+        </figure>
+        <figure>
+          <img src="images/ghana-campus.jpg" alt="大学キャンパスのイメージ">
+          <div class="image-caption">大学キャンパス（イメージ）</div>
+        </figure>
+        <figure>
+          <img src="images/ghana-students.jpg" alt="学生同士が話している様子">
+          <div class="image-caption">学生同士の対話（イメージ）</div>
+        </figure>
       </div>
 
     </div>
@@ -389,31 +485,52 @@
       <h2 class="section-title">協定校（ガーナ側パートナー大学）</h2>
 
       <div class="card">
-        <h3>ガーナ大学（University of Ghana）</h3>
-        <p>
-          1948年にロンドン大学のカレッジとして設立された、ガーナで最も歴史ある総合大学です。
-          基礎・応用科学、教育、保健、人文社会科学の4つのカレッジと、複数の研究センターを有し、
-          アフリカのみならず欧米の大学とも幅広い交流ネットワークを持っています。
-        </p>
-        <p><a href="https://www.ug.edu.gh/" target="_blank" rel="noopener">公式サイトを見る</a></p>
+        <div class="partner-layout">
+          <div>
+            <h3>ガーナ大学（University of Ghana）</h3>
+            <p>
+              1948年にロンドン大学のカレッジとして設立された、ガーナで最も歴史ある総合大学です。
+              基礎・応用科学、教育、保健、人文社会科学の4つのカレッジと、複数の研究センターを有し、
+              アフリカのみならず欧米の大学とも幅広い交流ネットワークを持っています。
+            </p>
+            <p><a href="https://www.ug.edu.gh/" target="_blank" rel="noopener">公式サイトを見る</a></p>
+          </div>
+          <div class="partner-photo">
+            <img src="images/ghana-campus.jpg" alt="ガーナ大学キャンパスのイメージ">
+          </div>
+        </div>
       </div>
 
       <div class="card">
-        <h3>ケープコースト大学（University of Cape Coast）</h3>
-        <p>
-          タイムズ・ハイヤー・エデュケーション世界大学ランキングで、ガーナおよび西アフリカのトップ大学として評価されている大学です。
-          大西洋を望むキャンパス環境と、社会科学・自然科学・教育など多様な学位プログラム、世界的な研究影響力を強みとしています。
-        </p>
-        <p><a href="https://ucc.edu.gh/" target="_blank" rel="noopener">公式サイトを見る</a></p>
+        <div class="partner-layout">
+          <div>
+            <h3>ケープコースト大学（University of Cape Coast）</h3>
+            <p>
+              タイムズ・ハイヤー・エデュケーション世界大学ランキングで、ガーナおよび西アフリカのトップ大学として評価されている大学です。
+              大西洋を望むキャンパス環境と、社会科学・自然科学・教育など多様な学位プログラム、世界的な研究影響力を強みとしています。
+            </p>
+            <p><a href="https://ucc.edu.gh/" target="_blank" rel="noopener">公式サイトを見る</a></p>
+          </div>
+          <div class="partner-photo">
+            <img src="images/ghana-city.jpg" alt="ケープコースト近郊の街や海のイメージ">
+          </div>
+        </div>
       </div>
 
       <div class="card">
-        <h3>クワメ・エンクルマ科学技術大学（KNUST）</h3>
-        <p>
-          工学・科学技術分野を中心とした国立大学で、農学・建築・人文社会・工学・保健・理学の6カレッジから構成されています。
-          科学技術を通じたガーナの経済・社会発展を牽引する人材育成・研究に力を入れています。
-        </p>
-        <p><a href="https://www.knust.edu.gh/" target="_blank" rel="noopener">公式サイトを見る</a></p>
+        <div class="partner-layout">
+          <div>
+            <h3>クワメ・エンクルマ科学技術大学（KNUST）</h3>
+            <p>
+              工学・科学技術分野を中心とした国立大学で、農学・建築・人文社会・工学・保健・理学の6カレッジから構成されています。
+              科学技術を通じたガーナの経済・社会発展を牽引する人材育成・研究に力を入れています。
+            </p>
+            <p><a href="https://www.knust.edu.gh/" target="_blank" rel="noopener">公式サイトを見る</a></p>
+          </div>
+          <div class="partner-photo">
+            <img src="images/ghana-students.jpg" alt="大学で学ぶ学生のイメージ">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -486,7 +603,7 @@
           <li>英語を用いたコミュニケーションに前向きに取り組める方（完璧な英語力は不要です）</li>
         </ul>
 
-        <h3>選抜の流れ（予定）</h3>
+        <h3>選抜の流れ（例）</h3>
         <ol>
           <li>オンライン説明会への参加（録画視聴も可）</li>
           <li>応募フォームへの入力・志望動機の提出</li>
@@ -506,7 +623,7 @@
         <h3>お問い合わせ</h3>
         <p>
           筑波大学 世界展開力強化事業 ガーナプログラム事務局<br />
-          （担当教員・連絡先メールアドレスなどをここに記載）
+          （担当教員名・メールアドレスをここに記載）
         </p>
       </div>
     </div>
