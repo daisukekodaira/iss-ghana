@@ -241,6 +241,30 @@
       font-weight: 600;
     }
 
+    /* ---- Schedule table ---- */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin-top: 0.6rem;
+    }
+    .schedule-table th,
+    .schedule-table td {
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 0.4rem;
+      vertical-align: top;
+    }
+    .schedule-table th {
+      text-align: left;
+      font-weight: 600;
+      background: #f8fafc;
+    }
+    .schedule-note {
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+      color: #475569;
+    }
+
     /* ---- Partners images ---- */
     .partner-layout {
       display: grid;
@@ -309,6 +333,19 @@
       </div>
     </div>
   </header>
+
+  <!-- 更新履歴 -->
+  <section id="updates" style="padding: 1.2rem 0; background: #eef2f7;">
+    <div class="container">
+      <h2 class="section-title">更新履歴</h2>
+      <ul>
+        <li>
+          2026/01/15：
+          <a href="#entry">ガーナ渡航スケジュール</a>を更新しました。
+        </li>
+      </ul>
+    </div>
+  </section>
 
   <!-- ご挨拶・背景 -->
   <section id="about">
@@ -396,43 +433,56 @@
 
       <div class="card">
         <table class="course-list">
+          <thead>
+            <tr>
+              <th>科目名</th>
+              <th>単位数（期間）</th>
+              <th>講義内容の概要</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <th>地球社会共創概論（オンデマンド講義）<br />［1単位］</th>
+              <td>地球社会共創概論（オンデマンド講義）</td>
+              <td>1単位</td>
               <td>
                 日本（アジア）とガーナ（アフリカ）の地理・歴史・社会・文化・開発史を多角的に学び、
                 異文化理解・多文化共生の基礎を身につけます。
               </td>
             </tr>
             <tr>
-              <th>地球社会共創演習（オンライン問題解決型学習）<br />［1単位］</th>
+              <td>地球社会共創演習（オンライン問題解決型学習）</td>
+              <td>1単位</td>
               <td>
                 日・ガーナ混成チームでグローバルな環境問題をテーマに、各自の専門を生かしながら
                 オンラインで議論・協働し、解決策を検討します。
               </td>
             </tr>
             <tr>
-              <th>アフリカ・オンラインフィールドスタディ<br />［1単位・既存科目］</th>
+              <td>アフリカ・オンラインフィールドスタディ</td>
+              <td>1単位（既存科目）</td>
               <td>
                 現地の社会・文化・環境課題について、オンラインを通じて学ぶフィールドスタディです。<strong>地球社会共創演習の学修効果を増強するために履修することを推奨します。</strong>
               </td>
             </tr>
             <tr>
-              <th>地球社会共創実習A（ガーナでのフィールド共修）<br />［1単位・約2週間集中］</th>
+              <td>地球社会共創実習A（ガーナでのフィールド共修）</td>
+              <td>1単位（約2週間集中）</td>
               <td>
                 日本とガーナの学生が共にガーナのフィールドを訪れ、「豊かになった社会の負の側面」が
                 表出した現場を視察し、多層的に問題を分析します。
               </td>
             </tr>
             <tr>
-              <th>地球社会共創実習B（日本でのフィールド共修）<br />［1単位・約1週間集中］</th>
+              <td>地球社会共創実習B（日本でのフィールド共修）</td>
+              <td>1単位（約1週間集中）</td>
               <td>
                 ガーナの学生を日本に迎え、日本における環境・社会課題の現場を訪問し、
                 双方の文脈を踏まえた課題比較・アクションプラン検討を行います。
               </td>
             </tr>
             <tr>
-              <th>フォローアップ（事後学習・キャリア支援）</th>
+              <td>フォローアップ（事後学習・キャリア支援）</td>
+              <td>—</td>
               <td>
                 プログラムで得た経験を振り返り、今後の学修計画やキャリア形成にどのように活かすかを考えます。
               </td>
@@ -606,37 +656,141 @@
           <li>英語を用いたコミュニケーションに前向きに取り組める方（完璧な英語力は不要です）</li>
         </ul>
 
-        <h3>2025年度 ガーナ渡航スケジュール（予定）</h3>
-        <p>本プログラムでは、2025年度は以下の行程でガーナ現地でのプレフィールド共修を実施します。</p>
+        <h3>2026年度 ガーナ渡航スケジュール（予定）</h3>
+        <p>本プログラムでは、2026年3月にガーナ現地でのフィールド共修を実施します。</p>
 
-        <ul>
-          <li><strong>3/6（木）</strong> 日本出発</li>
-          <li><strong>3/7（金）</strong> ガーナ到着（アクラ）</li>
-
-          <li><strong>3/8（土）〜 3/9（日）</strong><br>
-            ガーナ大学（University of Ghana）、JICA ガーナ事務所、ココプラス・ファンデーション訪問、<br>
-            アグボグブロシー（電子廃棄物集積地）視察（予定）
-          </li>
-
-          <li><strong>3/10（月）</strong> アクラ → クマシ（陸路移動）</li>
-
-          <li><strong>3/11（火）〜 3/12（水）</strong><br>
-            クワメ・エンクルマ科学技術大学（KNUST）訪問・Eラーニングプログラム参加
-          </li>
-
-          <li><strong>3/13（木）</strong> クマシ → アクラ</li>
-
-          <li><strong>3/14（金）</strong> アクラ → ケープコースト（移動）</li>
-
-          <li><strong>3/15（土）〜 3/17（月）</strong><br>
-            ケープコースト大学（University of Cape Coast）訪問、沿岸域管理センター（Center for Coastal Management）での研修
-          </li>
-
-          <li><strong>3/18（火）</strong> ケープコースト → アクラ、在ガーナ日本大使館訪問（予定）</li>
-
-          <li><strong>3/22（土）</strong> ガーナ出発</li>
-          <li><strong>3/24（月）</strong> 日本到着</li>
-        </ul>
+        <table class="schedule-table" aria-label="2026年3月 ガーナ渡航スケジュール">
+          <thead>
+            <tr>
+              <th>日付</th>
+              <th>曜日</th>
+              <th>内容</th>
+              <th>宿泊</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3/6</td>
+              <td>金</td>
+              <td>日本出発</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>3/7</td>
+              <td>土</td>
+              <td>ガーナ到着／オリエンテーション</td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/8</td>
+              <td>日</td>
+              <td>ガーナ大学キャンパスツアー</td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/9</td>
+              <td>月</td>
+              <td>
+                ガーナ大学 国際プログラム・オフィス表敬訪問／
+                講義「アグボグブロシー理解：歴史・神話・課題」
+              </td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/10</td>
+              <td>火</td>
+              <td>アグボグブロシーのMago Motorsで社会イノベーション視察</td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/11</td>
+              <td>水</td>
+              <td>内容未定（調整中）</td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/12</td>
+              <td>木</td>
+              <td>内容未定（調整中）</td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/13</td>
+              <td>金</td>
+              <td>内容未定（調整中）</td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/14</td>
+              <td>土</td>
+              <td>ケープコーストへ移動</td>
+              <td>Sasakawa Guest House（ケープコースト）</td>
+            </tr>
+            <tr>
+              <td>3/15</td>
+              <td>日</td>
+              <td>カクム国立公園エクスカーション</td>
+              <td>Sasakawa Guest House（ケープコースト）</td>
+            </tr>
+            <tr>
+              <td>3/16</td>
+              <td>月</td>
+              <td>
+                ケープコースト大学 国際関係オフィス（OIR）表敬訪問／
+                講義「沿岸域の汚染とマネジメント」
+              </td>
+              <td>Sasakawa Guest House（ケープコースト）</td>
+            </tr>
+            <tr>
+              <td>3/17</td>
+              <td>火</td>
+              <td>沿岸域の汚染とマネジメント現地視察</td>
+              <td>Sasakawa Guest House（ケープコースト）</td>
+            </tr>
+            <tr>
+              <td>3/18</td>
+              <td>水</td>
+              <td>ケープコースト大学講義「アフリカ史」／エルミナ城訪問</td>
+              <td>Sasakawa Guest House（ケープコースト）</td>
+            </tr>
+            <tr>
+              <td>3/19</td>
+              <td>木</td>
+              <td>ハッカソン：グループワーク＆コンサルテーション</td>
+              <td>Sasakawa Guest House（ケープコースト）</td>
+            </tr>
+            <tr>
+              <td>3/20</td>
+              <td>金</td>
+              <td>アクラへ移動／在ガーナ日本大使館 表敬訪問</td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/21</td>
+              <td>土</td>
+              <td>内容未定（調整中）</td>
+              <td>Sky Suite Apartment（アクラ）</td>
+            </tr>
+            <tr>
+              <td>3/22</td>
+              <td>日</td>
+              <td>成果共有・クロージング／ガーナ出発</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>3/23</td>
+              <td>月</td>
+              <td>移動日（内容確定）</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>3/24</td>
+              <td>火</td>
+              <td>日本到着</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
 
         <p><strong>募集人数：２名（予定）</strong></p>
         <p style="font-size:0.9rem;">※上記行程は現地状況により変更となる可能性があります。</p>
